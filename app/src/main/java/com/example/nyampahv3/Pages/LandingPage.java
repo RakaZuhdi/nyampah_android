@@ -1,8 +1,10 @@
-package com.example.nyampahv3;
+package com.example.nyampahv3.Pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.nyampahv3.R;
 
 public class LandingPage extends AppCompatActivity {
 

@@ -1,8 +1,10 @@
-package com.example.nyampahv3;
+package com.example.nyampahv3.Pages;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nyampahv3.R;
 
 public class RegisterPage extends AppCompatActivity {
 
