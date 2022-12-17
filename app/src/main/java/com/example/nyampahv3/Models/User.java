@@ -12,7 +12,9 @@ public class User
     public Date created_at;
     public Date modified_at;
 
-    public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_)
+    public String token;
+
+    public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_, String token)
     {
         this.id = id_;
         this.fullname = fullname_;
@@ -21,10 +23,12 @@ public class User
         this.point = point_;
         this.created_at = created_at_;
         this.modified_at = modified_at_;
+
+        this.token = token;
     }
 
     public static User defaultInstance()
     {
-        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null);
+        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null, null);
     }
 }
