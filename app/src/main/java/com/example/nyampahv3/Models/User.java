@@ -22,4 +22,9 @@ public class User
         this.created_at = created_at_;
         this.modified_at = modified_at_;
     }
+
+    public static User defaultInstance()
+    {
+        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null);
+    }
 }
