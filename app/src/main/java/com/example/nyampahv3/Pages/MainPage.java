@@ -53,13 +53,6 @@ public class MainPage extends AppCompatActivity {
 
 //        UserApi.getAll();
 
-//            try {
-//                User login = UserApi.Login("andi@gmail.com", "andi");
-//                System.out.println("onanana");
-//                System.out.println(login.token);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
 
 
 

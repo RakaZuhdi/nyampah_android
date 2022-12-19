@@ -39,7 +39,7 @@ public final class ApiUtil {
 
 
         if(param != null)
-        for(Map.Entry<String, String> e : param.entrySet())
+            for(Map.Entry<String, String> e : param.entrySet())
         {
             queryUrlBuilder.addQueryParameter(e.getKey(), e.getValue());
         }
