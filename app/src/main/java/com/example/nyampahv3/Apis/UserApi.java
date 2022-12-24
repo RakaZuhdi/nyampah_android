@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Map;
 
 
 public class UserApi {
@@ -30,6 +31,7 @@ public class UserApi {
 
     }
 
+
     public static User Login(String email, String password) throws Exception {
 
         JSONObject credential  = new JSONObject();
@@ -41,6 +43,14 @@ public class UserApi {
         return user;
     }
 
+    public static User Register(User u) throws Exception {
+
+        JSONObject newUser  = new JSONObject((Map) u);
+
+        User user =  ApiUtil.POST("v1/user", null, newUser.toString(), type);
+
+        return user;
+    }
 
 
 }
