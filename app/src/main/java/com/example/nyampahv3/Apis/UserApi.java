@@ -2,6 +2,7 @@ package com.example.nyampahv3.Apis;
 
 import com.example.nyampahv3.Models.User;
 import com.example.nyampahv3.Utils.ApiUtil;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,6 +14,7 @@ import java.util.Map;
 
 public class UserApi {
 
+    static Gson gson = new Gson();
     static Type type = User.class;
     static Type lisType = User[].class;
 
@@ -45,9 +47,7 @@ public class UserApi {
 
     public static User Register(User u) throws Exception {
 
-        JSONObject newUser  = new JSONObject((Map) u);
-
-        User user =  ApiUtil.POST("v1/user", null, newUser.toString(), type);
+        User user =  ApiUtil.POST("v1/user", null, gson.toJson(u) , type);
 
         return user;
     }
