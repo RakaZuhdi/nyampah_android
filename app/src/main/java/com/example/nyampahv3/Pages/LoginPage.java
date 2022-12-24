@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class LoginPage extends AppCompatActivity {
 
     EditText email;
     EditText password;
+    TextView registerNowTxt;
     Button  loginBtn;
     Gson gson = new Gson();
 
@@ -35,6 +37,7 @@ public class LoginPage extends AppCompatActivity {
         email = findViewById(R.id.textInput_email);
         password = findViewById(R.id.textInput_password);
         loginBtn = findViewById(R.id.button_submit);
+        registerNowTxt = findViewById(R.id.registernow);
 
         SharedPreferences sp1=this.getSharedPreferences("login", MODE_PRIVATE);
 
@@ -64,6 +67,13 @@ public class LoginPage extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        registerNowTxt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),RegisterPage.class));
+                return;
             }
         });
 
