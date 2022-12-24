@@ -14,6 +14,16 @@ public class User
 
     public String token;
 
+    public User(){
+
+    }
+
+    public User(String fullname_,String email_,String password_){
+        this.fullname = fullname_;
+        this.email = email_;
+        this.password = password_;
+    }
+
     public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_, String token)
     {
         this.id = id_;
@@ -26,6 +36,7 @@ public class User
 
         this.token = token;
     }
+
 
     public static User defaultInstance()
     {
