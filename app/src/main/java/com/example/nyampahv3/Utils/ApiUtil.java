@@ -118,7 +118,7 @@ public final class ApiUtil {
             ErrorMessage err = gson.fromJson(json.toString(), ErrorMessage.class);
             System.err.println(err.code);
             System.err.println(err.error_message);
-            return null;
+            return (T) err.toString();
 
         }
 
