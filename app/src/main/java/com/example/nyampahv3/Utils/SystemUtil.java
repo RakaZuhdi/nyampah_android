@@ -1,8 +1,11 @@
 package com.example.nyampahv3.Utils;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.nyampahv3.Models.User;
 import com.example.nyampahv3.R;
 
 import java.net.InetAddress;
@@ -23,5 +26,15 @@ public class SystemUtil {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(name, data);
         editor.apply();
+    }
+
+    public static String getCurrentLoggedInUserData(Context ctx){
+        SharedPreferences sp1= ctx.getSharedPreferences("login", MODE_PRIVATE);
+
+        return sp1.getString("user_data", null);
+    }
+
+    public static boolean LoggedIn(Context ctx){
+        return getCurrentLoggedInUserData(ctx) != null;
     }
 }
