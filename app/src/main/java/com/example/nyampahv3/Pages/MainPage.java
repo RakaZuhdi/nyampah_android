@@ -1,5 +1,6 @@
 package com.example.nyampahv3.Pages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,6 +12,8 @@ import com.example.nyampahv3.Fragments.MainFragment;
 import com.example.nyampahv3.Fragments.ProfileFragment;
 import com.example.nyampahv3.R;
 import com.example.nyampahv3.R.id;
+import com.example.nyampahv3.Utils.App;
+import com.example.nyampahv3.Utils.SystemUtil;
 import com.example.nyampahv3.databinding.MainPageBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
@@ -29,6 +32,8 @@ public class MainPage extends AppCompatActivity {
         binding = MainPageBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        App.setActivity(this);
 
 
         BottomNavigationView bnav = findViewById(id.bottomNavigationView);
@@ -49,6 +54,10 @@ public class MainPage extends AppCompatActivity {
                     //fragment = new usersFragment();
                     break;
                 case R.id.bottom_nav_account:
+                    if(!SystemUtil.LoggedIn()) {
+                        startActivity(new Intent(App.getContext(), LoginPage.class));
+                        return true;
+                    }
                     fragment = new ProfileFragment();
                     break;
             }
@@ -58,12 +67,7 @@ public class MainPage extends AppCompatActivity {
             return true;
         });
 
-        //trashDeposit.setText(currentUser.);
-
-
-//        UserApi.getAll();
-
-        //BottomNav.GetInstance(this);
+        App.setContext(getApplicationContext());
 
     }
     void loadFragment(Fragment fragment) {

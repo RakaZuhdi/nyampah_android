@@ -3,7 +3,6 @@ package com.example.nyampahv3.Pages;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,11 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.nyampahv3.Apis.UserApi;
 import com.example.nyampahv3.Models.User;
 import com.example.nyampahv3.R;
+import com.example.nyampahv3.Utils.AlertUtil;
+import com.example.nyampahv3.Utils.App;
 import com.example.nyampahv3.Utils.SystemUtil;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
-
-import java.util.Map;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -33,6 +31,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+        App.setActivity(this);
 
         email = findViewById(R.id.textInput_email);
         password = findViewById(R.id.textInput_password);
@@ -47,7 +46,7 @@ public class LoginPage extends AppCompatActivity {
                     User login = UserApi.Login(email.getText().toString(), password.getText().toString());
 
                     if(login.token == null){
-                        System.out.println("No token");
+                        AlertUtil.alert("Login error","No token");
                         Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_LONG);
                         return;
                     }

@@ -13,6 +13,7 @@ import com.example.nyampahv3.Apis.UserApi;
 import com.example.nyampahv3.Models.ErrorMessage;
 import com.example.nyampahv3.Models.User;
 import com.example.nyampahv3.R;
+import com.example.nyampahv3.Utils.App;
 import com.example.nyampahv3.Utils.SystemUtil;
 import com.google.gson.Gson;
 
@@ -32,6 +33,8 @@ public class RegisterPage extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_page);
+        App.setActivity(this);
+
 
         fullname = findViewById(R.id.textInput_fullname);
         email = findViewById(R.id.textInput_email);
