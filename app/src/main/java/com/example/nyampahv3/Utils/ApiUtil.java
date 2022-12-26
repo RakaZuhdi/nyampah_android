@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -82,6 +83,7 @@ public final class ApiUtil {
         MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
         //val body = jsonObject.toString().toRequestBody(mediaType)
         RequestBody reqbody = RequestBody.create(body, mediaType);
+        String bearer_token = SystemUtil.getCurrentUserBearerToken();
 
         System.out.println(url.toString());
         HttpUrl.Builder queryUrlBuilder = HttpUrl.parse(url).newBuilder();
@@ -95,6 +97,7 @@ public final class ApiUtil {
 
         Request request = new Request.Builder()
                 .url(String.valueOf(queryUrlBuilder.build()))
+                .headers(Headers.of("Authorization", "Bearer " + bearer_token))
                 .post(reqbody)
                 .build();
 
