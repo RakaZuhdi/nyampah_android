@@ -5,8 +5,11 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.nyampahv3.Apis.UserApi;
 import com.example.nyampahv3.Models.User;
+import com.example.nyampahv3.Pages.MainPage;
 import com.example.nyampahv3.R;
+import com.google.gson.Gson;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -28,13 +31,35 @@ public class SystemUtil {
         editor.apply();
     }
 
-    public static String getCurrentLoggedInUserData(Context ctx){
-        SharedPreferences sp1= ctx.getSharedPreferences("login", MODE_PRIVATE);
-
-        return sp1.getString("user_data", null);
+    public static void clearSharedPreference(String key){
+        App.getContext().getSharedPreferences(key,0).edit().clear().commit();
     }
 
-    public static boolean LoggedIn(Context ctx){
-        return getCurrentLoggedInUserData(ctx) != null;
+    public static User getCurrentLoggedInUserDataAPI(Context ctx) throws Exception {
+        User u = UserApi.TokenLogin();
+
+        return u;
+    }
+
+    public static User getCurrentLoggedInUserDataSharedPref(){
+        SharedPreferences sp1= App.getContext().getSharedPreferences("login", MODE_PRIVATE);
+        String data = sp1.getString("user_data", null);
+
+        User currentUser = new Gson().fromJson(data, User.class);
+
+        return currentUser;
+    }
+
+    public static boolean LoggedIn(){
+        return getCurrentLoggedInUserDataSharedPref() != null;
+    }
+
+    public static String getCurrentUserBearerToken(){
+        User x = getCurrentLoggedInUserDataSharedPref();
+
+        if(x == null) return null;
+
+        return x.token;
+
     }
 }
