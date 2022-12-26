@@ -45,6 +45,15 @@ public class UserApi {
         return user;
     }
 
+    public static User TokenLogin() throws Exception {
+
+        JSONObject credential  = new JSONObject();
+
+        User user =  ApiUtil.POST("v1/user/token_login", null, credential.toString(), type);
+
+        return user;
+    }
+
     public static User Register(User u) throws Exception {
 
         User user =  ApiUtil.POST("v1/user", null, gson.toJson(u) , type);
