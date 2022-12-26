@@ -1,85 +1,74 @@
 package com.example.nyampahv3.Pages;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 //import com.example.nyampahv3.Apis.UserApi;
-import com.example.nyampahv3.Apis.UserApi;
-import com.example.nyampahv3.Models.User;
+import com.example.nyampahv3.Fragments.MainFragment;
+import com.example.nyampahv3.Fragments.ProfileFragment;
 import com.example.nyampahv3.R;
 import com.example.nyampahv3.R.id;
-import com.example.nyampahv3.Utils.ApiUtil;
-import com.example.nyampahv3.Utils.SystemUtil;
+import com.example.nyampahv3.databinding.MainPageBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 
 public class MainPage extends AppCompatActivity {
 
+    private MainPageBinding binding;
+
     Gson gson = new Gson();
 
-    TextView poinText;
-    TextView trashDeposit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_page);
+        binding = MainPageBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        BottomNavigationView bnav = (BottomNavigationView) findViewById(id.bottomNavigationView);
 
-        poinText = findViewById(id.text_numerical_points);
-        trashDeposit = findViewById(id.text_numerical_trash_deposited);
+        BottomNavigationView bnav = findViewById(id.bottomNavigationView);
+        bnav.setId(id.bottom_nav_home);
+        loadFragment(new MainFragment());
 
-        SharedPreferences sp1=this.getSharedPreferences("login", MODE_PRIVATE);
 
-        User currentUser = null;
-        String user_data =sp1.getString("user_data", null);
 
-        if(user_data == null) currentUser = User.defaultInstance();
-        else currentUser = gson.fromJson(user_data, User.class);
+        bnav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
 
-        poinText.setText(currentUser.point+"");
+            Fragment fragment = null;
+            switch (item.getItemId()) {
+                case R.id.bottom_nav_home:
+                    fragment = new MainFragment();
+                    break;
+                case R.id.bottom_nav_photrash:
+                    //fragment = new usersFragment();
+                    break;
+                case R.id.bottom_nav_account:
+                    fragment = new ProfileFragment();
+                    break;
+            }
+            if (fragment != null) {
+                loadFragment(fragment);
+            }
+            return true;
+        });
+
         //trashDeposit.setText(currentUser.);
 
 
 //        UserApi.getAll();
 
+        //BottomNav.GetInstance(this);
 
-
-
-        ImageView dp = findViewById(id.imageView5);
-
-        bnav.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            switch (id){
-                case R.id.bottom_nav_home:
-                    if(this.getClass().getSimpleName().equals(MainPage.class.getSimpleName())) return true;
-                    startActivity(new Intent(getApplicationContext(),MainPage.class));
-
-
-                case R.id.bottom_nav_photrash:
-                    //if(this.getClass().getSimpleName() == MainPage.class.getSimpleName()) return true;
-                    //startActivity(new Intent(getApplicationContext(),PhotoTrash.class));
-                    return true;
-
-                case R.id.bottom_nav_account:
-                    if(this.getClass().getSimpleName().equals(LoginPage.class.getSimpleName())) return true;
-                    startActivity(new Intent(getApplicationContext(),LoginPage.class));
-                    return true;
-
-            }
-
-            return false;
-        });
     }
+    void loadFragment(Fragment fragment) {
+        //to attach fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.relativelayout, fragment).commit();
+    }
+
 }
