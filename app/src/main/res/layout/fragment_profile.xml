@@ -55,8 +55,8 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_first_name"
-                app:helperText="First Name"
+                android:id="@+id/layout_full_name"
+                app:helperText="Full Name"
                 android:layout_width="0dp"
                 app:layout_constraintWidth_percent="0.7"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/et_first_name"
+                    android:id="@+id/et_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Handy"
@@ -82,31 +82,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_last_name"
-                android:layout_width="0dp"
-                app:helperText="Last Name"
-                app:layout_constraintWidth_percent="0.7"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textColorHint="#808080"
-                app:layout_constraintTop_toBottomOf="@+id/layout_first_name"
-                >
 
-                <TextView
-                    android:id="@+id/et_last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Opinion"
-                    android:textColor="#000000"
-                    android:textColorHint="#808080"
-                    android:background="#00000000"
-                    android:textSize="15sp"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -118,7 +94,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColorHint="#808080"
-                app:layout_constraintTop_toBottomOf="@+id/layout_last_name"
+                app:layout_constraintTop_toBottomOf="@+id/layout_full_name"
                 >
 
                 <TextView
@@ -136,33 +112,23 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_contact_no"
+            <Button
+                android:id="@+id/logoutBtn"
                 android:layout_width="0dp"
-                app:helperText="Contact No"
+                app:helperText="Logout"
+                android:layout_marginTop="20dp"
                 app:layout_constraintWidth_percent="0.7"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textColorHint="#808080"
+                android:backgroundTint="#C41E3A"
+                android:text="Logout"
+                android:textColorHint="@color/white"
                 app:layout_constraintTop_toBottomOf="@+id/layout_email"
-                >
 
-                <TextView
-                    android:id="@+id/et_contact_no"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#808080"
-                    android:background="#00000000"
-                    android:text="0300 1234567"
-                    android:textSize="15sp"
-                    android:inputType="phone"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
+                >
+            </Button>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

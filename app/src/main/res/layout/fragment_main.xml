@@ -139,10 +139,10 @@
 
                 <TextView
                     android:id="@+id/text_numerical_trash_deposited"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:layout_marginEnd="172dp"
-                    android:text="1.5 KG"
+                    android:text="0 KG"
                     android:textAllCaps="true"
                     android:textColor="#DBDBDB"
                     android:textSize="20sp"
