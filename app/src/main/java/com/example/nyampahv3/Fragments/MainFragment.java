@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.nyampahv3.Apis.UserApi;
 import com.example.nyampahv3.Models.User;
 import com.example.nyampahv3.R;
 import com.example.nyampahv3.Utils.SystemUtil;
@@ -81,12 +82,19 @@ public class MainFragment extends Fragment {
         ImageView dp = view.findViewById(R.id.imageView5);
 
         User currentUser = null;
-        String user_data = SystemUtil.getCurrentLoggedInUserData(getActivity());
+        User user_data = SystemUtil.getCurrentLoggedInUserDataSharedPref();
 
         if(user_data == null) currentUser = User.defaultInstance();
-        else currentUser = gson.fromJson(user_data, User.class);
+        else {
+            try {
+                currentUser = UserApi.TokenLogin();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
         poinText.setText(currentUser.point+"");
+        trashDeposit.setText(currentUser.total_trash_weight + " KG");
 
         return view;
     }
