@@ -9,24 +9,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RequestPage extends AppCompatActivity {
-    private ArrayList<Request> requestList;
+public class RedeemPage extends AppCompatActivity {
+    private ArrayList<Redeem> redeemList;
     private RecyclerView recyclerView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.request_list);
+        setContentView(R.layout.redeem_list_user);
         recyclerView = findViewById(R.id.redeem_recyclerview_list);
-        requestList = new ArrayList<>();
+        redeemList = new ArrayList<>();
 
         setUserInfo();
         setAdapter();
     }
 
     private void setAdapter(){
-        RequestAdapter adapter = new RequestAdapter(requestList);
+        RedeemAdapter adapter = new RedeemAdapter(redeemList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -34,15 +34,15 @@ public class RequestPage extends AppCompatActivity {
     }
 
     private void setUserInfo() {
-        requestList.add(new Request("Raka"));
-        requestList.add(new Request("Ferdi"));
-        requestList.add(new Request("Daniel"));
-        requestList.add(new Request("Dyon"));
-        requestList.add(new Request("Diva"));
-        requestList.add(new Request("Bayu"));
-        requestList.add(new Request("Arkent"));
-        requestList.add(new Request("Dave"));
-        requestList.add(new Request("Micha"));
+        redeemList.add(new Redeem("Raka"));
+        redeemList.add(new Redeem("Ferdi"));
+        redeemList.add(new Redeem("Daniel"));
+        redeemList.add(new Redeem("Dyon"));
+        redeemList.add(new Redeem("Diva"));
+        redeemList.add(new Redeem("Bayu"));
+        redeemList.add(new Redeem("Arkent"));
+        redeemList.add(new Redeem("Dave"));
+        redeemList.add(new Redeem("Micha"));
 
     }
 }

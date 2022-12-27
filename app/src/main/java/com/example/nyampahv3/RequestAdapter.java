@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +23,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.MyViewHo
         public MyViewHolder(final View view){
             super(view);
 
-            requestButton = view.findViewById(R.id.list_item_request_button);
+            requestButton = view.findViewById(R.id.list_item_redeem_button);
         }
     }
 
