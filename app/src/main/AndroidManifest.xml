@@ -19,6 +19,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
 
+
         </activity>
         <activity
             android:name=".LoginAsPage"
@@ -45,7 +46,14 @@
         </activity>
 
         <activity
-            android:name=".MainPage"
+            android:name=".MainPageUser"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainPageDriver"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -69,17 +77,73 @@
 
         </activity>
         <activity
+            android:name=".TrashPickupLocation"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        </activity>
+        <activity
+            android:name=".TrashPickupPhoto"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".TrashPickupThankYou"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrashRequestLocation"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrashRequestPickedUp"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrashRequestThankYou"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TrashRequestWeight"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+
+        <activity
             android:name=".RedeemPage"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
     </application>
