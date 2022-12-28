@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/bottom_nav_home"
-        android:enabled="true"
         android:icon="@drawable/home_icon"
-        android:title="Home"/>
+        android:id="@+id/home"
+        android:title="Home" />
     <item
-        android:id="@+id/bottom_nav_mytrash"
-        android:enabled="true"
         android:icon="@drawable/trash_icon"
-        android:title="My Trash"/>
+        android:id="@+id/trash"
+        android:title="Trash" />
     <item
-        android:id="@+id/bottom_nav_photrash"
-        android:enabled="true"
-        android:icon="@drawable/photo_icon"
-        android:title="Photo trash"/>
-    <item
-        android:id="@+id/bottom_nav_account"
-        android:enabled="true"
-        android:icon="@drawable/account_icon"
-        android:title="Account"/>
+        android:icon="@drawable/user_icon"
+        android:id="@+id/profile"
+        android:title="Profile" />
 </menu>

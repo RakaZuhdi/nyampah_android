@@ -4,47 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pages.LandingPage">
+    tools:context=".LandingPage">
 
     <ImageView
         android:id="@+id/developer3"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/developer2"
         android:layout_width="38dp"
         android:layout_height="37dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.003"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/developer3"
+        app:layout_constraintTop_toBottomOf="@+id/developer3"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/text_developer2"
+        android:id="@+id/text_developer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Muhammad Raka Zuhdi H"
+        android:layout_marginStart="5dp"
+        android:text="Gregorius Ferdinand"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/developer2"
-        app:layout_constraintTop_toTopOf="@+id/developer2" />
-
-    <TextView
-        android:id="@+id/text_developer_address2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:text="&quot;@raka_zuhdi&quot;"
-        app:layout_constraintStart_toEndOf="@+id/developer2"
-        app:layout_constraintTop_toTopOf="@+id/developer2" />
+        app:layout_constraintStart_toEndOf="@+id/developer3"
+        app:layout_constraintTop_toTopOf="@+id/developer3" />
 
     <ImageView
         android:id="@+id/developer1"
         android:layout_width="38dp"
         android:layout_height="37dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/developer2"
         app:layout_constraintTop_toBottomOf="@+id/developer2"
         tools:srcCompat="@tools:sample/avatars" />
@@ -53,7 +49,7 @@
         android:id="@+id/text_developer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="5dp"
         android:text="Daniel Amazia"
         android:textColor="#000000"
         android:textStyle="bold"
@@ -64,48 +60,42 @@
         android:id="@+id/text_developer_address3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
         android:text="&quot;@daniel0101001&quot;"
-        app:layout_constraintStart_toEndOf="@+id/developer1"
-        app:layout_constraintTop_toTopOf="@+id/developer1" />
+        app:layout_constraintStart_toStartOf="@+id/text_developer3"
+        app:layout_constraintTop_toBottomOf="@+id/text_developer3" />
+
+    <TextView
+        android:id="@+id/text_developer_address2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&quot;@raka_zuhdi&quot;"
+        app:layout_constraintStart_toStartOf="@+id/text_developer2"
+        app:layout_constraintTop_toBottomOf="@+id/text_developer2" />
 
     <TextView
         android:id="@+id/text_developer_address1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
         android:text="&quot;@ferdinandgregorius&quot;"
-        app:layout_constraintStart_toEndOf="@+id/developer3"
-        app:layout_constraintTop_toTopOf="@+id/developer3" />
+        app:layout_constraintStart_toStartOf="@+id/text_developer1"
+        app:layout_constraintTop_toBottomOf="@+id/text_developer1" />
 
     <TextView
-        android:id="@+id/text_developer1"
+        android:id="@+id/text_developer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Gregorius Ferdinand"
+        android:layout_marginStart="5dp"
+        android:text="Muhammad Raka Zuhdi H"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/developer3"
-        app:layout_constraintTop_toTopOf="@+id/developer3" />
-
-    <ImageView
-        android:id="@+id/developer2"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/developer3"
-        app:layout_constraintStart_toStartOf="@+id/developer3"
-        app:layout_constraintTop_toBottomOf="@+id/developer3"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toEndOf="@+id/developer2"
+        app:layout_constraintTop_toTopOf="@+id/developer2" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="297dp"
-        android:layout_height="106dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="300sp"
+        android:layout_height="110sp"
+        android:layout_marginTop="229dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -113,28 +103,25 @@
 
     <Button
         android:id="@+id/button_login_as_change"
-        android:layout_width="170dp"
-        android:layout_height="65dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="180sp"
+        android:layout_height="65sp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:paddingRight="5dp"
         android:text="register"
-        app:layout_constraintBottom_toBottomOf="@+id/button_login_as"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_login_as"
-        app:layout_constraintTop_toTopOf="@+id/button_login_as" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button_login_as"
-        android:layout_width="170dp"
-        android:layout_height="65dp"
+        android:layout_width="180sp"
+        android:layout_height="65sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:text="login as"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.979" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,8 +46,8 @@ public class LoginPage extends AppCompatActivity {
                     User login = UserApi.Login(email.getText().toString(), password.getText().toString());
 
                     if(login.token == null){
-                        AlertUtil.alert("Login error","No token");
-                        Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_LONG);
+                        //AlertUtil.alert("Login error","No token");
+                        //Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_LONG);
                         return;
                     }
                     else{

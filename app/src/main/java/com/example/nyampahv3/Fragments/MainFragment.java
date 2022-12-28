@@ -79,7 +79,8 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         poinText = view.findViewById(R.id.text_numerical_points);
         trashDeposit = view.findViewById(R.id.text_numerical_trash_deposited);
-        ImageView dp = view.findViewById(R.id.imageView5);
+        TextView hiUser = view.findViewById(R.id.hiUserTxt);
+        //ImageView dp = view.findViewById(R.id.imageView5);
 
         User currentUser = null;
         User user_data = SystemUtil.getCurrentLoggedInUserDataSharedPref();
@@ -95,6 +96,7 @@ public class MainFragment extends Fragment {
 
         poinText.setText(currentUser.point+"");
         trashDeposit.setText(currentUser.total_trash_weight + " KG");
+        hiUser.setText("Hi," + currentUser.fullname);
 
         return view;
     }
