@@ -14,11 +14,11 @@
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/button_customer"
+        app:layout_constraintStart_toStartOf="@+id/button_customer_loginas"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_customer"
+        android:id="@+id/button_customer_loginas"
         android:layout_width="375dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button_submit"
+        android:id="@+id/button_submit_login"
         android:layout_width="375dp"
         android:layout_height="60dp"
         android:layout_marginTop="9dp"
@@ -36,5 +36,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_customer" />
+        app:layout_constraintTop_toBottomOf="@+id/button_customer_loginas" />
 </androidx.constraintlayout.widget.ConstraintLayout>

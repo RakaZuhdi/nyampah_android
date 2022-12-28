@@ -8,7 +8,7 @@
     <Button
         android:id="@+id/list_item_redeem_button"
         android:layout_width="match_parent"
-        android:layout_height="60sp"
+        android:layout_height="120sp"
         android:text="Button"
         android:textAlignment="viewStart"
         android:textAllCaps="false"

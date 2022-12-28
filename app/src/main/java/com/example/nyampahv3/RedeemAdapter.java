@@ -39,7 +39,7 @@ public class RedeemAdapter extends RecyclerView.Adapter<RedeemAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull RedeemAdapter.MyViewHolder holder, int position) {
         String name = redeemList.get(position).getUsername();
-        holder.redeemButton.setText("Redeem by " + name);
+        holder.redeemButton.setText("Redeem " + name + " points");
     }
 
     @Override

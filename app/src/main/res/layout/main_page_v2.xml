@@ -173,7 +173,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardview_trash_deposited" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_icon1"
+        android:id="@+id/cardview_gopay"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginTop="200dp"
@@ -192,7 +192,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/title_icon1"
+                android:id="@+id/text_gopay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -201,11 +201,11 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_icon1"
+                app:layout_constraintTop_toBottomOf="@+id/image_gopay"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/image_icon1"
+                android:id="@+id/image_gopay"
                 android:layout_width="55dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="20dp"
@@ -219,7 +219,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_icon2"
+        android:id="@+id/cardview_ovo"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginStart="102dp"
@@ -239,7 +239,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/title_icon2"
+                android:id="@+id/text_ovo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="33dp"
@@ -248,11 +248,11 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_icon2"
+                app:layout_constraintTop_toBottomOf="@+id/image_ovo"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/image_icon2"
+                android:id="@+id/image_ovo"
                 android:layout_width="55dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="20dp"
@@ -266,7 +266,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_icon3"
+        android:id="@+id/cardview_bca"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginStart="204dp"
@@ -286,7 +286,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/title_icon3"
+                android:id="@+id/text_bca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="33dp"
@@ -295,11 +295,11 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_icon3"
+                app:layout_constraintTop_toBottomOf="@+id/image_bca"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/image_icon3"
+                android:id="@+id/image_bca"
                 android:layout_width="55dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="20dp"
@@ -313,7 +313,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_icon4"
+        android:id="@+id/cardview_bsi"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginTop="302dp"
@@ -332,7 +332,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/title_icon4"
+                android:id="@+id/text_bsi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="37dp"
@@ -341,11 +341,11 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_icon4"
+                app:layout_constraintTop_toBottomOf="@+id/image_bsi"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/image_icon4"
+                android:id="@+id/image_bsi"
                 android:layout_width="55dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="20dp"
@@ -359,7 +359,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_icon5"
+        android:id="@+id/cardview_dana"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginStart="102dp"
@@ -379,7 +379,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/title_icon5"
+                android:id="@+id/text_dana"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
@@ -388,11 +388,11 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_icon5"
+                app:layout_constraintTop_toBottomOf="@+id/image_dana"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/image_icon5"
+                android:id="@+id/image_dana"
                 android:layout_width="55dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="20dp"
@@ -406,7 +406,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview_icon6"
+        android:id="@+id/cardview_linkaja"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginStart="204dp"
@@ -426,7 +426,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/title_icon6"
+                android:id="@+id/text_linkaja"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="17dp"
@@ -435,11 +435,11 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_icon6"
+                app:layout_constraintTop_toBottomOf="@+id/image_linkaja"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
-                android:id="@+id/image_icon6"
+                android:id="@+id/image_linkaja"
                 android:layout_width="55dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="20dp"
