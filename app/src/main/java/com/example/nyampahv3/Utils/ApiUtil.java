@@ -64,10 +64,10 @@ public final class ApiUtil {
 
 
 
-        if(json instanceof JSONObject && ((JSONObject) json).getString("http_code").equals("403")){
+        if(json instanceof JSONObject &&
+                ((JSONObject) json).has("http_code")){
             ErrorMessage err = gson.fromJson(json.toString(), ErrorMessage.class);
-            System.err.println(err.code);
-            System.err.println(err.error_message);
+            AlertUtil.alert(err.code, err.error_message);
             return null;
 
         }
@@ -116,11 +116,11 @@ public final class ApiUtil {
 
 
         if(json instanceof JSONObject &&
-                ((JSONObject) json).has("http_code") &&
-                ((JSONObject) json).getString("http_code").equals("403")){
+                ((JSONObject) json).has("http_code")){
             ErrorMessage err = gson.fromJson(json.toString(), ErrorMessage.class);
             System.err.println(err.code);
-            System.err.println(err.error_message);
+
+            AlertUtil.alert(err.code, err.error_message);
             return (T) err.toString();
 
         }
@@ -167,11 +167,9 @@ public final class ApiUtil {
 
 
         if(json instanceof JSONObject &&
-                ((JSONObject) json).has("http_code") &&
-                ((JSONObject) json).getString("http_code").equals("403")){
+                ((JSONObject) json).has("http_code")){
             ErrorMessage err = gson.fromJson(json.toString(), ErrorMessage.class);
-            System.err.println(err.code);
-            System.err.println(err.error_message);
+            AlertUtil.alert(err.code, err.error_message);
             return null;
 
         }
@@ -218,11 +216,9 @@ public final class ApiUtil {
 
 
         if(json instanceof JSONObject &&
-                ((JSONObject) json).has("http_code") &&
-                ((JSONObject) json).getString("http_code").equals("403")){
+                ((JSONObject) json).has("http_code")){
             ErrorMessage err = gson.fromJson(json.toString(), ErrorMessage.class);
-            System.err.println(err.code);
-            System.err.println(err.error_message);
+            AlertUtil.alert(err.code, err.error_message);
             return null;
 
         }
