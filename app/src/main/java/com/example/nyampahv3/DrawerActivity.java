@@ -36,6 +36,7 @@ public class DrawerActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navViewMainpage;
         // Passing each menu ID as a set of Ids because each

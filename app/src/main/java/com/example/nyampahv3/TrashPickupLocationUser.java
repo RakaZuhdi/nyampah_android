@@ -10,16 +10,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ProfilePage extends AppCompatActivity {
+public class TrashPickupLocationUser extends AppCompatActivity {
 
     private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nav_profile_activity);
+        setContentView(R.layout.nav_request_pickup_trash_activity);
 
-        navigationView = findViewById(R.id.nav_view_profile);
+        navigationView = findViewById(R.id.nav_view_trash_pickup_location);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem item){
@@ -29,6 +29,10 @@ public class ProfilePage extends AppCompatActivity {
 
                 if(item.getItemId() == R.id.nav_request){
                     openTrashPage();
+                }
+
+                if(item.getItemId() == R.id.nav_profile){
+                    openProfilePage();
                 }
 
                 DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);

@@ -1,6 +1,8 @@
 package com.example.nyampahv3;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -16,13 +18,32 @@ public class RedeemPage extends AppCompatActivity {
     private ArrayList<Redeem> redeemList;
     private RecyclerView recyclerView;
     private TextView textTitle;
-
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nav_trash_activity);
+        setContentView(R.layout.nav_redeem_activity);
 
+        navigationView = findViewById(R.id.nav_view_redeem);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item){
+                if(item.getItemId() == R.id.nav_home){
+                    openHomePage();
+                }
+
+                if(item.getItemId() == R.id.nav_profile){
+                    openProfilePage();
+                }
+
+                if(item.getItemId() == R.id.nav_request){
+                    openTrashPage();
+                }
+
+                return true;
+            }
+        });
 
         String redeemType = getIntent().getStringExtra("redeemType");
         redeemType ="Redeem " + redeemType + " Coupons";
@@ -52,5 +73,20 @@ public class RedeemPage extends AppCompatActivity {
         redeemList.add(new Redeem("300.000"));
         redeemList.add(new Redeem("360.000"));
 
+    }
+
+    public void openProfilePage(){
+        Intent intent = new Intent(this, ProfilePage.class);
+        startActivity(intent);
+    }
+
+    public void openHomePage(){
+        Intent intent = new Intent(this, MainPageUser.class);
+        startActivity(intent);
+    }
+
+    public void openTrashPage(){
+        Intent intent = new Intent(this, TrashPickupLocationUser.class);
+        startActivity(intent);
     }
 }

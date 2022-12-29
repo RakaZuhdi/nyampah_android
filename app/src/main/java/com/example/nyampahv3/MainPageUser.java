@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -12,7 +11,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainPageUser extends AppCompatActivity {
@@ -37,14 +35,15 @@ public class MainPageUser extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem item){
                 if(item.getItemId() == R.id.nav_home){
-                    Toast.makeText(MainPageUser.this, "home", Toast.LENGTH_SHORT).show();
+                    openHomePage();
                 }
 
-
-
                 if(item.getItemId() == R.id.nav_profile){
-                    Toast.makeText(MainPageUser.this, "profile", Toast.LENGTH_SHORT).show();
-                    openProfilePage("test");
+                    openProfilePage();
+                }
+
+                if(item.getItemId() == R.id.nav_request){
+                    openTrashPage();
                 }
 
                 DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
@@ -52,8 +51,6 @@ public class MainPageUser extends AppCompatActivity {
 
                 return true;
             }
-
-
         });
 
         card_gopay_mainPageUser = (CardView) findViewById(R.id.cardview_gopay);
@@ -111,8 +108,18 @@ public class MainPageUser extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openProfilePage(String redeemType){
+    public void openProfilePage(){
         Intent intent = new Intent(this, ProfilePage.class);
+        startActivity(intent);
+    }
+
+    public void openTrashPage(){
+        Intent intent = new Intent(this, TrashPickupLocationUser.class);
+        startActivity(intent);
+    }
+
+    public void openHomePage(){
+        Intent intent = new Intent(this, MainPageUser.class);
         startActivity(intent);
     }
 
