@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class TrashRequestWeight extends AppCompatActivity {
+public class TrashRequestWeightDriver extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

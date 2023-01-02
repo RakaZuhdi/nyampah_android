@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class TrashRequestLocation extends AppCompatActivity {
+public class TrashRequestDriver extends AppCompatActivity {
     private NavigationView navigationView;
 
 

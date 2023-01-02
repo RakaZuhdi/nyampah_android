@@ -4,11 +4,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class TrashPickupThankYou extends AppCompatActivity {
+public class TrashRequestPickedUpDriver extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.trash_pickup_thankyou_user);
+        setContentView(R.layout.trash_request_pickedup_driver);
     }
 }

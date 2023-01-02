@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +28,7 @@ public class LoginPage extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
 
 
-        button_submit_login = (Button) findViewById(R.id.button_submit_login);
+        button_submit_login = (Button) findViewById(R.id.button_submit_register);
         button_submit_login.setOnClickListener(new View.OnClickListener() {
             @Override
 

@@ -4,33 +4,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegisterPage extends AppCompatActivity {
+public class TrashPickupThankYouUser extends AppCompatActivity {
 
     private Button buttonRequestAnotherPickup;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_page);
+        setContentView(R.layout.trash_pickup_thankyou_user);
 
-        buttonRequestAnotherPickup = (Button) findViewById(R.id.button_submit_register);
+        buttonRequestAnotherPickup = (Button) findViewById(R.id.trash_pickup_uploadphoto_button);
         buttonRequestAnotherPickup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Register successful!",Toast.LENGTH_SHORT).show();
-                openLoginPage();
+                openTrashPickupLocationPage();
             }
         });
-
     }
 
-    public void openLoginPage(){
-        Intent intent = new Intent(this, LoginPage.class);
+    public void openTrashPickupLocationPage(){
+        Intent intent = new Intent(this, TrashPickupLocationUser.class);
         startActivity(intent);
     }
 }

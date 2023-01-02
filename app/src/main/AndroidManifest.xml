@@ -95,42 +95,42 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrashPickupPhoto"
+            android:name=".TrashPickupPhotoUser"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrashPickupThankYou"
+            android:name=".TrashPickupThankYouUser"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrashRequestLocation"
+            android:name=".TrashRequestDriver"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrashRequestPickedUp"
+            android:name=".TrashRequestPickedUpDriver"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrashRequestThankYou"
+            android:name=".TrashRequestThankYouDriver"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrashRequestWeight"
+            android:name=".TrashRequestWeightDriver"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

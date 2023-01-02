@@ -24,7 +24,7 @@ public class LoginAsPage extends AppCompatActivity {
             }
         });
 
-        button_loginas_driver = (Button) findViewById(R.id.button_submit_login);
+        button_loginas_driver = (Button) findViewById(R.id.button_submit_register);
         button_loginas_driver.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 openLoginPage();
