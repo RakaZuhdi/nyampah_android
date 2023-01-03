@@ -40,8 +40,6 @@ public class MainPage extends AppCompatActivity {
         bnav.setId(id.home);
         loadFragment(new MainFragment());
 
-
-
         bnav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 

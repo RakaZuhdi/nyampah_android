@@ -59,10 +59,6 @@ public class LoginPage extends AppCompatActivity {
                         return;
                     }
 
-
-
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
