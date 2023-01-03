@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.nyampahv3.util.App;
+
 public class LandingPage extends AppCompatActivity {
 
     private Button button_loginas;
@@ -16,6 +18,7 @@ public class LandingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.landing_page);
+        App.setContext(getApplicationContext());
 
         button_loginas = (Button) findViewById(R.id.button_login_as_landingpage);
         button_loginas.setOnClickListener(new View.OnClickListener() {
