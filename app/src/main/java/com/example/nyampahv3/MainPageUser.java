@@ -1,9 +1,13 @@
 package com.example.nyampahv3;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -22,13 +26,23 @@ public class MainPageUser extends AppCompatActivity {
     private CardView card_dana_mainPageUser;
     private CardView card_linkaja_mainPageUser;
     private NavigationView navigationView;
-
-    BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
+    private TextView textView_name;
+    private TextView textView_points;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_activity_main);
+
+        SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+
+        textView_name = (TextView) findViewById(R.id.main_hello_text);
+        textView_name.setText("Hi, " + sp.getString("fullname", ""));
+
+        textView_points = (TextView) findViewById(R.id.text_numerical_points);
+        textView_points.setText(String.valueOf(sp.getInt("points", 0)));
+
 
         navigationView = findViewById(R.id.nav_view_mainpage);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){

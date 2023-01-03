@@ -53,4 +53,9 @@ public class ProfilePage extends AppCompatActivity {
         Intent intent = new Intent(this, ProfilePage.class);
         startActivity(intent);
     }
+
+    public void openLandingPage(){
+        Intent intent = new Intent(this, LandingPage.class);
+        startActivity(intent);
+    }
 }

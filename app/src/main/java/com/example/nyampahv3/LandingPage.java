@@ -36,13 +36,13 @@ public class LandingPage extends AppCompatActivity {
         });
 
         try {
-            User result = UserApi.TokenLogin();
-            Log.d("test", result.fullname);
+            //User result = UserApi.TokenLogin();
+            //Log.d("test", result.fullname);
 
-            if(result.fullname != null){
-                Intent intent = new Intent(this, MainPageUser.class);
-                startActivity(intent);
-            }
+            //if(result.fullname != null){
+            //    Intent intent = new Intent(this, MainPageUser.class);
+            //    startActivity(intent);
+            //}
 
         } catch (Exception e) {
             e.printStackTrace();

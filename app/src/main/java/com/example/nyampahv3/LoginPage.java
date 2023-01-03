@@ -10,8 +10,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nyampahv3.api.TrasHistoryApi;
 import com.example.nyampahv3.api.UserApi;
 import com.example.nyampahv3.model.User;
+import com.example.nyampahv3.model.trash_history;
 import com.example.nyampahv3.util.App;
 import com.example.nyampahv3.util.SystemUtil;
 import com.google.gson.Gson;
@@ -50,9 +52,16 @@ public class LoginPage extends AppCompatActivity {
                         //Toast.makeText(getApplicationContext(), "Incorrect email or password", Toast.LENGTH_LONG);
                         return;
                     }
+
                     else{
-                        sharedPreferences =getSharedPreferences("login",MODE_PRIVATE);
-                        SystemUtil.writeSharedPreferenceString(sharedPreferences, "user_data", gson.toJson(login));
+                        sharedPreferences = getSharedPreferences("user_data",MODE_PRIVATE);
+
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("fullname", login.fullname);
+                        editor.putInt("points", login.point);
+                        editor.commit();
+
+                        //SystemUtil.writeSharedPreferenceString(sharedPreferences, "user_data", gson.toJson(login));
 
                         Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_LONG);
 
