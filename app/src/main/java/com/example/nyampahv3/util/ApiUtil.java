@@ -127,7 +127,8 @@ public final class ApiUtil {
         }
 
 
-        return  gson.fromJson( json.toString(), T);
+        if(T != null) return  gson.fromJson( json.toString(), T);
+        else return (T) new JSONObject(String.valueOf(json));
     }
 
     public static <T> T PUT(String requestUrl, Map<String ,String> param, String body ,Type T) throws Exception {
