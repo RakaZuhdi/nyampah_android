@@ -61,5 +61,19 @@ public class UserApi {
         return user;
     }
 
+    public static JSONObject RedeemPoint(int point) throws Exception {
+
+        JSONObject body  = new JSONObject();
+        body.put("points",point);
+
+        JSONObject user =  ApiUtil.POST("v1/redeem/points ", null, body.toString(), null);
+
+        if(user.getString("success") != null){
+            body.put("points", user.getString("point"));
+            return body;
+        }
+
+        return null;
+    }
 
 }
