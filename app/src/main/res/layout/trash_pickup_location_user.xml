@@ -18,6 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <LinearLayout
+                android:id="@+id/fragment_activity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/text_redeempoints_redeem_list_user"
                 android:layout_width="wrap_content"
@@ -46,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
+                    <LinearLayout
                         android:id="@+id/trash_pickup_capturedphoto_imageview"
                         android:layout_width="299dp"
                         android:layout_height="215dp"
@@ -54,7 +61,9 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/map_mockup" />
+                        android:orientation="horizontal">
+
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView21"

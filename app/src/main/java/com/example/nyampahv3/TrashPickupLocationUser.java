@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class TrashPickupLocationUser extends AppCompatActivity {
@@ -52,6 +53,14 @@ public class TrashPickupLocationUser extends AppCompatActivity {
                 return true;
             }
         });
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+
+        // add a fragment to the activity
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id., mapFragment)
+                .commit();
     }
 
     public void openHomePage(){

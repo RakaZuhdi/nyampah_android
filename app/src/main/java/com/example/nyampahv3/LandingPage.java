@@ -38,7 +38,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void openLoginPage(){
-        Intent intent = new Intent(this, LoginPage.class);
+        Intent intent = new Intent(this, TrashPickupLocationUser.class);
         startActivity(intent);
     }
 
