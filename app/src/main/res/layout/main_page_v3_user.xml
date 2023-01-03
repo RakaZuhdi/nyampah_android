@@ -21,7 +21,7 @@
                 android:layout_height="580dp">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/main_hello_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -39,8 +39,8 @@
                     android:layout_marginTop="25dp"
                     android:text="Its trash day!"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView5"
-                    app:layout_constraintTop_toTopOf="@+id/textView5" />
+                    app:layout_constraintStart_toStartOf="@+id/main_hello_text"
+                    app:layout_constraintTop_toTopOf="@+id/main_hello_text" />
 
                 <TextView
                     android:id="@+id/textView7"
