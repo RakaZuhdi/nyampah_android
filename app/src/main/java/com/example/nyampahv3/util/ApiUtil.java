@@ -1,8 +1,8 @@
 package com.example.nyampahv3.util;
 
 
-import com.example.nyampahv3.Models.ErrorMessage;
-import com.example.nyampahv3.Models.User;
+import com.example.nyampahv3.model.ErrorMessage;
+import com.example.nyampahv3.model.User;
 import com.example.nyampahv3.model.ErrorMessage;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

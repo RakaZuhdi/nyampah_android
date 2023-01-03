@@ -5,7 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.nyampahv3.Apis.UserApi;
+import com.example.nyampahv3.api.UserApi;
 import com.example.nyampahv3.model.User;
 import com.example.nyampahv3.R;
 import com.example.nyampahv3.model.User;
