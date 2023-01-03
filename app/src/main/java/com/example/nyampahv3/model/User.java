@@ -2,6 +2,29 @@ package com.example.nyampahv3.model;
 
 import java.util.Date;
 
+enum Type {
+    DRIVER("DRIVER"),
+    CUSTOMER("CUSTOMER")
+    ;
+
+    private final String text;
+
+    /**
+     * @param text
+     */
+    Type(final String text) {
+        this.text = text;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Enum#toString()
+     */
+    @Override
+    public String toString() {
+        return text;
+    }
+}
+
 public class User
 {
     public int id;
@@ -9,6 +32,7 @@ public class User
     public String email;
     public String password;
     public int point;
+    public Type type;
     public Date created_at;
     public Date modified_at;
 
@@ -26,7 +50,7 @@ public class User
         this.password = password_;
     }
 
-    public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_, String token, double total_trash_weight)
+    public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_, String token, double total_trash_weight, Type type)
     {
         this.id = id_;
         this.fullname = fullname_;
@@ -38,11 +62,12 @@ public class User
 
         this.token = token;
         this.total_trash_weight = total_trash_weight;
+        this.type = type;
     }
 
 
     public static User defaultInstance()
     {
-        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null, null,0);
+        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null, null,0, Type.CUSTOMER);
     }
 }
