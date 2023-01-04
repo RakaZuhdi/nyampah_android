@@ -43,7 +43,16 @@ public class MainPageUser extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences spj = getSharedPreferences("login", Context.MODE_PRIVATE);
 
-        User user = SystemUtil.getCurrentLoggedInUserDataSharedPref();
+        User user = null;
+
+        if(SystemUtil.LoggedIn()){
+            user = SystemUtil.getCurrentLoggedInUserDataSharedPref();
+
+
+        }else{
+            openLandingPage();
+            return;
+        }
 
 
         textView_name = (TextView) findViewById(R.id.main_hello_text);
@@ -129,6 +138,11 @@ public class MainPageUser extends AppCompatActivity {
                 openRedeemPageUser("LINK AJA");
             }
         });
+    }
+
+    private void openLandingPage() {
+        Intent intent = new Intent(this, LandingPage.class);
+        startActivity(intent);
     }
 
     public void openRedeemPageUser(String redeemType){
