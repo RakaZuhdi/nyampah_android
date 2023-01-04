@@ -66,10 +66,10 @@ public class UserApi {
         JSONObject body  = new JSONObject();
         body.put("points",point);
 
-        JSONObject user =  ApiUtil.POST("v1/redeem/points ", null, body.toString(), null);
+        JSONObject user =  ApiUtil.POST("v1/user/redeem/points ", null, body.toString(), null);
 
         if(user.getString("success") != null){
-            body.put("points", user.getString("point"));
+            body.put("points", user.getString("points"));
             return body;
         }
 

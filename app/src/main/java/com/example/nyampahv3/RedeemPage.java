@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nyampahv3.util.App;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class RedeemPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_redeem_activity);
+        App.setActivity(this);
 
         navigationView = findViewById(R.id.nav_view_redeem);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
