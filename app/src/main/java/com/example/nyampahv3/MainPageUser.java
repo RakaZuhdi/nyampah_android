@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.nyampahv3.api.UserApi;
 import com.example.nyampahv3.model.User;
 import com.example.nyampahv3.util.SystemUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,6 +41,8 @@ public class MainPageUser extends AppCompatActivity {
 
         Gson gson = new Gson();
 
+
+
         SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences spj = getSharedPreferences("login", Context.MODE_PRIVATE);
 
@@ -47,7 +50,11 @@ public class MainPageUser extends AppCompatActivity {
 
         if(SystemUtil.LoggedIn()){
             user = SystemUtil.getCurrentLoggedInUserDataSharedPref();
-
+            try {
+                user = UserApi.TokenLogin();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }else{
             openLandingPage();
