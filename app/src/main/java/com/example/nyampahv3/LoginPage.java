@@ -10,10 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nyampahv3.api.TrasHistoryApi;
 import com.example.nyampahv3.api.UserApi;
 import com.example.nyampahv3.model.User;
-import com.example.nyampahv3.model.trash_history;
 import com.example.nyampahv3.util.App;
 import com.example.nyampahv3.util.SystemUtil;
 import com.google.gson.Gson;
@@ -33,7 +31,7 @@ public class LoginPage extends AppCompatActivity {
         App.setActivity(this);
 
 
-        input_password = findViewById(R.id.textInput_password);
+        input_password = findViewById(R.id.textInput_password_register);
         input_email = findViewById(R.id.textInput_email);
 
         Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
