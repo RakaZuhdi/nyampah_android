@@ -42,6 +42,7 @@ public class User
 
     public String token;
     public double total_trash_weight;
+    public double total_pickedup_trash;
 
     public User(){
 
@@ -53,7 +54,7 @@ public class User
         this.password = password_;
     }
 
-    public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_, String token, double total_trash_weight, Type type)
+    public User(int id_,String fullname_,String email_,String password_,int point_, Date created_at_,Date modified_at_, String token, double total_trash_weight, Type type, double total_pickedup_trash)
     {
         this.id = id_;
         this.fullname = fullname_;
@@ -65,12 +66,13 @@ public class User
 
         this.token = token;
         this.total_trash_weight = total_trash_weight;
+        this.total_pickedup_trash = total_pickedup_trash;
         this.type = type;
     }
 
 
     public static User defaultInstance()
     {
-        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null, null,0, Type.CUSTOMER);
+        return new User(0,"abc", "abc@abc.com", " ", 0, new Date(), null, null,0, Type.CUSTOMER,0);
     }
 }

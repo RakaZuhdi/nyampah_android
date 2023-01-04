@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -52,6 +53,16 @@ public class MainPageUser extends AppCompatActivity {
             user = SystemUtil.getCurrentLoggedInUserDataSharedPref();
             try {
                 user = UserApi.TokenLogin();
+                Menu nav_menu = navigationView.getMenu();
+
+                if(user.type.equals(User.Type.CUSTOMER)){
+                    nav_menu.findItem(R.id.nav_request_driver).setVisible(false);
+                }
+
+                if(user.type.equals(User.Type.DRIVER)){
+                    nav_menu.findItem(R.id.nav_request_user).setVisible(false);
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -61,6 +72,7 @@ public class MainPageUser extends AppCompatActivity {
             return;
         }
 
+        navigationView = findViewById(R.id.nav_view_mainpage);
 
         textView_name = (TextView) findViewById(R.id.main_hello_text);
         textView_name.setText("Hi, " + user.fullname);
@@ -74,8 +86,6 @@ public class MainPageUser extends AppCompatActivity {
         Log.d("Total trash weight", String.valueOf(user.total_trash_weight));
 
 
-
-        navigationView = findViewById(R.id.nav_view_mainpage);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem item){
@@ -87,8 +97,12 @@ public class MainPageUser extends AppCompatActivity {
                     openProfilePage();
                 }
 
-                if(item.getItemId() == R.id.nav_request){
-                    openTrashPage();
+                if(item.getItemId() == R.id.nav_request_user){
+                    openTrashPageUser();
+                }
+
+                if(item.getItemId() == R.id.nav_request_driver){
+                    openTrashPageDriver();
                 }
 
                 DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
@@ -147,6 +161,11 @@ public class MainPageUser extends AppCompatActivity {
         });
     }
 
+    private void openTrashPageDriver() {
+        Intent intent = new Intent(this, TrashRequestDriver.class);
+        startActivity(intent);
+    }
+
     private void openLandingPage() {
         Intent intent = new Intent(this, LandingPage.class);
         startActivity(intent);
@@ -163,7 +182,7 @@ public class MainPageUser extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openTrashPage(){
+    public void openTrashPageUser(){
         Intent intent = new Intent(this, TrashPickupLocationUser.class);
         startActivity(intent);
     }

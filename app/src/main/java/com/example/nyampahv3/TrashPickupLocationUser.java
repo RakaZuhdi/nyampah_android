@@ -22,7 +22,7 @@ public class TrashPickupLocationUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_user_pickup_trash_activity);
 
-        buttonSetPickupPoint = (Button) findViewById(R.id.trash_pickup_uploadphoto_button);
+        buttonSetPickupPoint = (Button) findViewById(R.id.trash_pickup_finish_button);
         buttonSetPickupPoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +38,7 @@ public class TrashPickupLocationUser extends AppCompatActivity {
                     openHomePage();
                 }
 
-                if(item.getItemId() == R.id.nav_request){
+                if(item.getItemId() == R.id.nav_request_user){
                     openTrashPage();
                 }
 
@@ -52,6 +52,8 @@ public class TrashPickupLocationUser extends AppCompatActivity {
                 return true;
             }
         });
+
+
     }
 
     public void openHomePage(){

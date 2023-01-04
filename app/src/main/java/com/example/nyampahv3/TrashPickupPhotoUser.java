@@ -2,7 +2,6 @@ package com.example.nyampahv3;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.Image;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -32,7 +31,7 @@ public class TrashPickupPhotoUser extends AppCompatActivity {
         });
 
         capturedImage = (ImageView) findViewById(R.id.trash_pickup_capturedphoto_imageview);
-        buttonTakePhoto = (Button) findViewById(R.id.trash_pickup_uploadphoto_button);
+        buttonTakePhoto = (Button) findViewById(R.id.trash_pickup_finish_button);
 
         buttonTakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override

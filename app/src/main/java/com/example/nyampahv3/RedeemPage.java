@@ -39,7 +39,7 @@ public class RedeemPage extends AppCompatActivity {
                     openProfilePage();
                 }
 
-                if(item.getItemId() == R.id.nav_request){
+                if(item.getItemId() == R.id.nav_request_user){
                     openTrashPage();
                 }
 

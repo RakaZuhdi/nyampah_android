@@ -17,7 +17,7 @@ public class TrashPickupThankYouUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trash_pickup_thankyou_user);
 
-        buttonRequestAnotherPickup = (Button) findViewById(R.id.trash_pickup_uploadphoto_button);
+        buttonRequestAnotherPickup = (Button) findViewById(R.id.trash_pickup_finish_button);
         buttonRequestAnotherPickup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

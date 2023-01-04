@@ -62,13 +62,13 @@
 
                     <ImageView
                         android:id="@+id/imageView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="94dp"
+                        android:layout_height="96dp"
                         android:layout_marginTop="30dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        tools:srcCompat="@drawable/ic_baseline_mood_24" />
 
                     <TextView
                         android:id="@+id/text_fullname_profile"
@@ -137,7 +137,7 @@
                         android:id="@+id/text_totaltrash_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="3dp"
+                        android:layout_marginStart="4dp"
                         android:text="1.5 KG"
                         android:textColor="#000000"
                         android:textSize="28sp"

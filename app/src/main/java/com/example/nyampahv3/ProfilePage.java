@@ -46,6 +46,8 @@ public class ProfilePage extends AppCompatActivity {
         text_total_trash.setText("");
         text_member_since = (TextView) findViewById(R.id.text_membersince_profile);
         text_member_since.setText(String.valueOf(user.created_at));
+        text_total_pickups = (TextView) findViewById(R.id.text_totaltrash_profile);
+        text_total_pickups.setText(String.valueOf(user.total_pickedup_trash));
         Date date = new Date(String.valueOf(user.created_at));
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
         text_member_since.setText("Member since " + dateFormat.format(date));
@@ -69,7 +71,7 @@ public class ProfilePage extends AppCompatActivity {
                     openHomePage();
                 }
 
-                if(item.getItemId() == R.id.nav_request){
+                if(item.getItemId() == R.id.nav_request_user){
                     openTrashPage();
                 }
 

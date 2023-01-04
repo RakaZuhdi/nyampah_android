@@ -9,9 +9,13 @@
             android:icon="@drawable/home_icon"
             android:title="Home" />
         <item
-            android:id="@+id/nav_request"
+            android:id="@+id/nav_request_user"
             android:icon="@drawable/ic_baseline_pedal_bike_24"
-            android:title="Request for Pickup" />
+            android:title="Request for Pickup (User)" />
+        <item
+            android:id="@+id/nav_request_driver"
+            android:icon="@drawable/ic_baseline_directions_bike_24"
+            android:title="Request for Pickup (Driver)" />
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_baseline_notes_24"
