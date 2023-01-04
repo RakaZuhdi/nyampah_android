@@ -2,31 +2,34 @@ package com.example.nyampahv3.model;
 
 import java.util.Date;
 
-enum Type {
-    DRIVER("DRIVER"),
-    CUSTOMER("CUSTOMER")
-    ;
 
-    private final String text;
-
-    /**
-     * @param text
-     */
-    Type(final String text) {
-        this.text = text;
-    }
-
-    /* (non-Javadoc)
-     * @see java.lang.Enum#toString()
-     */
-    @Override
-    public String toString() {
-        return text;
-    }
-}
 
 public class User
 {
+
+    public static enum Type {
+        DRIVER("DRIVER"),
+        CUSTOMER("CUSTOMER")
+        ;
+
+        private final String text;
+
+        /**
+         * @param text
+         */
+        Type(final String text) {
+            this.text = text;
+        }
+
+        /* (non-Javadoc)
+         * @see java.lang.Enum#toString()
+         */
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
+
     public int id;
     public String fullname;
     public String email;

@@ -23,6 +23,7 @@ public class LoginPage extends AppCompatActivity {
     private EditText input_password;
     private EditText input_email;
     SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferencesJson;
     Gson gson = new Gson();
 
     @Override
@@ -55,13 +56,14 @@ public class LoginPage extends AppCompatActivity {
 
                     else{
                         sharedPreferences = getSharedPreferences("user_data",MODE_PRIVATE);
+                        sharedPreferencesJson = getSharedPreferences("login",MODE_PRIVATE);
 
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("fullname", login.fullname);
                         editor.putInt("points", login.point);
                         editor.commit();
 
-                        //SystemUtil.writeSharedPreferenceString(sharedPreferences, "user_data", gson.toJson(login));
+                        SystemUtil.writeSharedPreferenceString(sharedPreferencesJson, "user_data_json", gson.toJson(login));
 
                         Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_LONG);
 

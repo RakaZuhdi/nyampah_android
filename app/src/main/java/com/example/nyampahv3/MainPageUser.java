@@ -14,8 +14,11 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.nyampahv3.model.User;
+import com.example.nyampahv3.util.SystemUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
 
 public class MainPageUser extends AppCompatActivity {
 
@@ -35,13 +38,25 @@ public class MainPageUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_activity_main);
 
+        Gson gson = new Gson();
+
         SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        SharedPreferences spj = getSharedPreferences("login", Context.MODE_PRIVATE);
+
+        User user = SystemUtil.getCurrentLoggedInUserDataSharedPref();
+
 
         textView_name = (TextView) findViewById(R.id.main_hello_text);
-        textView_name.setText("Hi, " + sp.getString("fullname", ""));
+        textView_name.setText("Hi, " + user.fullname);
 
         textView_points = (TextView) findViewById(R.id.text_numerical_points);
-        textView_points.setText(String.valueOf(sp.getInt("points", 0)));
+        textView_points.setText(user.point+"");
+
+        textView_points = (TextView) findViewById(R.id.text_numerical_trash_deposited);
+        textView_points.setText(user.total_trash_weight+"");
+
+        Log.d("Total trash weight", String.valueOf(user.total_trash_weight));
+
 
 
         navigationView = findViewById(R.id.nav_view_mainpage);

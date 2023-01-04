@@ -43,7 +43,7 @@ public class SystemUtil {
 
     public static User getCurrentLoggedInUserDataSharedPref(){
         SharedPreferences sp1= App.getContext().getSharedPreferences("login", MODE_PRIVATE);
-        String data = sp1.getString("user_data", null);
+        String data = sp1.getString("user_data_json", null);
 
         User currentUser = new Gson().fromJson(data, User.class);
 

@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.example.nyampahv3.api.UserApi;
 import com.example.nyampahv3.model.User;
 import com.example.nyampahv3.util.App;
+import com.example.nyampahv3.util.SystemUtil;
 
 public class LandingPage extends AppCompatActivity {
 
@@ -36,13 +37,17 @@ public class LandingPage extends AppCompatActivity {
         });
 
         try {
-            //User result = UserApi.TokenLogin();
-            //Log.d("test", result.fullname);
+            if(SystemUtil.LoggedIn()){
+                User result = UserApi.TokenLogin();
 
-            //if(result.fullname != null){
-            //    Intent intent = new Intent(this, MainPageUser.class);
-            //    startActivity(intent);
-            //}
+                Log.d("test", result.fullname);
+
+                if(result.fullname != null){
+                    openMainPageUser();
+
+                }
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,6 +69,16 @@ public class LandingPage extends AppCompatActivity {
 
     public void openRegisterPage(){
         Intent intent = new Intent(this, RegisterPage.class);
+        startActivity(intent);
+    }
+
+    public void openMainPageUser(){
+        Intent intent = new Intent(this, MainPageUser.class);
+        startActivity(intent);
+    }
+
+    public void openMainPageDriver(){
+        Intent intent = new Intent(this, MainPageDriver.class);
         startActivity(intent);
     }
 }
