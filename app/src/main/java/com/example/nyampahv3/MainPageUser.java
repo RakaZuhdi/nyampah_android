@@ -69,7 +69,7 @@ public class MainPageUser extends AppCompatActivity {
         textView_points.setText(user.point+"");
 
         textView_points = (TextView) findViewById(R.id.text_numerical_trash_deposited);
-        textView_points.setText(user.total_trash_weight+"");
+        textView_points.setText(user.total_trash_weight+" KG");
 
         Log.d("Total trash weight", String.valueOf(user.total_trash_weight));
 

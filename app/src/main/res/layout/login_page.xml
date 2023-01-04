@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_email_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -67,8 +67,8 @@
         android:text="E-mail"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/text_email_header"
+        app:layout_constraintTop_toBottomOf="@+id/text_email_header" />
 
     <TextView
         android:id="@+id/textView17"
@@ -78,7 +78,7 @@
         android:text="Password"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/text_email_header"
         app:layout_constraintTop_toBottomOf="@+id/textInput_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
